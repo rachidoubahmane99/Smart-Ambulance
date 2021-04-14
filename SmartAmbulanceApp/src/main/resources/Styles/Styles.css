@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 14, 2021, 4:33:09 PM
+    Author     : rachid dev
+*/
+.ImgMenu:border {
+    -fx-border-color: black;
+    -fx-border-style: solid;
+    -fx-border-width: 5;
+}
+.box{
+    --fx-background-radius: 3px;
+               -fx-border-radius: 3px;
+}
+.box:hover{
+     -fx-border-color: #990099;
+    -fx-border-width: 0px 0px 3px 0px;
+}
