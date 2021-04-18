@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ResourceBundle;
 import javafx.scene.layout.AnchorPane;
-import sun.applet.Main;
 
 /**
  * JavaFX App
@@ -22,7 +21,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
             
          Parent root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
-        Scene scene = new Scene(root);
+         scene = new Scene(root);
         scene.getStylesheets().add("/Styles/Styles.css");
         stage.setTitle("Smart Ambulance App");
        //stage.initStyle(StageStyle.TRANSPARENT);
