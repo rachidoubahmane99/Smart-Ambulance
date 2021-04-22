@@ -7,6 +7,10 @@ and open the template in the editor.
     Created on : Apr 14, 2021, 4:33:09 PM
     Author     : rachid dev
 */
+
+button{
+    -fx-background-color: blueviolet;
+}
 .ImgMenu:border {
     -fx-border-color: black;
     -fx-border-style: solid;

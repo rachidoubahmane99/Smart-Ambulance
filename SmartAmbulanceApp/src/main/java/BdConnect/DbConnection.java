@@ -15,8 +15,8 @@ import java.sql.SQLException;
  */
 public class DbConnection {
      
-    public static final String USERNAME = "XFUdwTJBF2";
-    public static final String PASSWORD = "8k74KNK3no";
+       public static final String USERNAME = "XFUdwTJBF2";
+    public static final String PASSWORD = "wuJ6HRRlO4";
     public static final String CONN = "jdbc:mysql://remotemysql.com:3306/XFUdwTJBF2";
 
     public static Connection getConnection() throws SQLException {
