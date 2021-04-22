@@ -79,8 +79,37 @@ public class AdminsController implements Initializable {
     }    
 
     @FXML
-    private void searchUsers(KeyEvent event) {
-        System.out.println("Controllers.AdminsController.searchUsers()");
+    private void searchAdmins(KeyEvent event) {
+        ObservableList<Admin> admins = FXCollections.observableArrayList();
+        String searchInput = searchTextField.getText();
+
+        try {
+             con = DbConnection.getConnection();
+                   stmt = con.createStatement();
+        //String query="select * from Admin where nom like'"+searchInput+"' ";
+        resultSet =stmt.executeQuery("SELECT IdAdmin, nom, prenom, email, phone, active FROM Admin where nom like'"+searchInput+"' ");
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("IdAdmin");
+                String prenom = resultSet.getString("prenom");
+                String nom = resultSet.getString("nom");
+                String email = resultSet.getString("email");
+                String phone = resultSet.getString("phone");
+                int active = resultSet.getInt("active");
+
+                System.out.println("ID: " + id + "  prenom: " + prenom + " nom: " + nom + " email: " + email + " phone: " + phone + " active: " + active);
+                admins.add(new Admin(id, nom, prenom, email, phone, active));
+            }
+
+            for (int i = 0; i < admins.size(); i++) {
+                System.out.println(admins.get(i));
+            }
+            tableView.setItems(admins);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     @FXML
@@ -92,10 +121,17 @@ public class AdminsController implements Initializable {
     public ObservableList<Admin> getAdmins() {
 
         ObservableList<Admin> admins = FXCollections.observableArrayList();
+        String searchInput = searchTextField.getText();
+          if (searchInput!="") {
+            
+        }
         try {
            con = DbConnection.getConnection();
-                   stmt = con.createStatement();
-            resultSet = stmt.executeQuery("SELECT IdAdmin, nom, prenom, email, phone, active FROM Admin");
+           AdminsController admin = new AdminsController();
+         
+           resultSet = admin.executeSearchQuery(searchInput);
+                  // stmt = con.createStatement();
+            //resultSet = stmt.executeQuery("SELECT IdAdmin, nom, prenom, email, phone, active FROM Admin");
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("IdAdmin");
@@ -115,4 +151,31 @@ public class AdminsController implements Initializable {
         }
         return admins;
     }
+    
+    public ResultSet executeSearchQuery(String searchInput) throws SQLException {
+        
+        con = DbConnection.getConnection();
+        PreparedStatement preparedStatement = con.prepareStatement(
+                "SELECT * "
+                + "FROM Admin WHERE IdAdmin LIKE ? ESCAPE '!' OR prenom "
+                + "LIKE ? ESCAPE '!' OR nom LIKE ? ESCAPE '!' OR email LIKE ? "
+                + "ESCAPE '!' OR active LIKE ? ESCAPE '!' OR phone LIKE ? ESCAPE '!'");
+        String search = searchInput
+                .replace("!", "!!")
+                .replace("%", "!%")
+                .replace("_", "!_")
+                .replace("[", "![");
+
+        preparedStatement.setString(1, "%" + search + "%");
+        preparedStatement.setString(2, "%" + search + "%");
+        preparedStatement.setString(3, "%" + search + "%");
+        preparedStatement.setString(4, "%" + search + "%");
+        preparedStatement.setString(5, "%" + search + "%");
+        preparedStatement.setString(6, "%" + search + "%");
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        return resultSet;
+    }
+    
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="886.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminsController">
+<AnchorPane id="AnchorPane" prefHeight="511.0" prefWidth="958.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminsController">
    <children>
       <ImageView fitHeight="69.0" fitWidth="82.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,7 +19,7 @@
       </ImageView>
       <VBox layoutX="83.0" layoutY="127.0" prefHeight="340.0" prefWidth="768.0">
          <children>
-            <TableView fx:id="tableView" prefHeight="301.0" prefWidth="661.0">
+            <TableView fx:id="tableView" prefHeight="301.0" prefWidth="661.0" stylesheets="@../Styles/TableView.css">
                <columns>
                   <TableColumn fx:id="idColumn" prefWidth="79.0" text="adminId" />
                   <TableColumn fx:id="lastNameColumn" prefWidth="147.0" text="Nom" />
@@ -28,10 +28,13 @@
                   <TableColumn fx:id="roleColumn" prefWidth="135.0" text="Telephone" />
                   <TableColumn fx:id="statusColumn" minWidth="8.0" prefWidth="132.0" text="Etat" />
                </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
          </children>
       </VBox>
-      <JFXTextField fx:id="searchTextField" focusColor="#4dadf7" layoutX="89.0" layoutY="58.0" onKeyReleased="#searchUsers" prefHeight="27.0" prefWidth="175.0" promptText="adminSearch" />
+      <JFXTextField fx:id="searchTextField" focusColor="#4dadf7" layoutX="89.0" layoutY="58.0" onKeyReleased="#searchAdmins" prefHeight="27.0" prefWidth="175.0" promptText="admin Search" />
       <Button layoutX="749.0" layoutY="57.0" mnemonicParsing="false" onAction="#goToAddView" prefHeight="27.0" prefWidth="151.0" style="-fx-background-color: #72c3fc#72c3fc;" text="addUser">
          <font>
             <Font size="15.0" />
