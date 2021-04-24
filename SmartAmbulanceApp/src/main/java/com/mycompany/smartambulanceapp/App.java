@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,6 +29,8 @@ public class App extends Application {
 
     Connection con = null;
     public Statement stmt;
+    public Stage primaryStage;
+    
     
     ResultSet resultSet = null;
     @Override
@@ -46,6 +49,31 @@ public class App extends Application {
         stage.show();
 
     }
+    
+    //methode pour switcher entre les scens
+    public static void switchView(String view) throws IOException {
+        //parent vanuit MainApp laden
+     
+
+    }
+    public void switchScene(String fxmlFile)
+{
+
+    FXMLLoader loader = new FXMLLoader(getClass()
+            .getResource(fxmlFile));
+    Parent root;
+    try 
+    {
+        root = (Parent)loader.load();
+   
+        this.primaryStage.setScene(new Scene(root));
+    } 
+    catch (IOException e)
+    {
+        e.printStackTrace();
+    }
+
+}
     public static void main(String[] args) {
        
         launch(args);

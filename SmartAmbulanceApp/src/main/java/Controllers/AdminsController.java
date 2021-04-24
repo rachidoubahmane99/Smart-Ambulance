@@ -8,6 +8,8 @@ package Controllers;
 import BdConnect.DbConnection;
 import Models.Admin;
 import com.jfoenix.controls.JFXTextField;
+import com.mycompany.smartambulanceapp.App;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,11 +23,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -33,12 +41,15 @@ import javafx.scene.input.KeyEvent;
  * @author rachid dev
  */
 public class AdminsController implements Initializable {
-
     
+    App app = new App();
     Connection con = null;
     public Statement stmt;
     
     ResultSet resultSet = null;
+    
+    @FXML
+    private Button AddNewAdminBtn;
     
     @FXML
     private JFXTextField searchTextField;
@@ -114,10 +125,30 @@ public class AdminsController implements Initializable {
 
     @FXML
     private void goToAddView(ActionEvent event) {
-        System.out.println("Controllers.AdminsController.goToAddView()");
+        
+        //NewUserController.edit = false;
+
+        //app.switchScene("/fxml/NewUser.fxml");
+        //System.out.println("Controllers.AdminsController.goToAddView()");
+        
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/NewUser.fxml"));
+    Parent root;
+    try 
+    {
+        root = (Parent)loader.load();
+        Scene scene = new Scene(root);
+         scene.getStylesheets().add("/Styles/buttons.css");
+   
+        app.primaryStage.setScene(scene);
+    } 
+    catch (IOException e)
+    {
+        e.printStackTrace();
     }
+}
     
-    
+        
     public ObservableList<Admin> getAdmins() {
 
         ObservableList<Admin> admins = FXCollections.observableArrayList();

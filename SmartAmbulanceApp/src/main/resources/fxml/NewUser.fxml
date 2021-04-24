@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXDialog?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -21,11 +20,11 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: #eee;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.Controllers.NewUserController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: #eee;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.NewUserController">
    <children>
       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="67.0" prefHeight="64.0" prefWidth="200.0" styleClass="top-bar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label focusTraversable="false" graphicTextGap="8.0" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="131.0" text="%new_user" textFill="#eeeeee" HBox.hgrow="ALWAYS">
+            <Label focusTraversable="false" graphicTextGap="8.0" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="131.0" text="Nouveau Admin" textFill="#eeeeee" HBox.hgrow="ALWAYS">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -43,7 +42,7 @@
                   <Insets right="8.0" />
                </padding>
             </Label>
-            <Button id="menu-btn" fx:id="returnBtn" cancelButton="true" focusTraversable="false" mnemonicParsing="false" prefHeight="64.0" prefWidth="75.0" style="-fx-background-radius: 0 0 0 16;" stylesheets="@../Layout/buttons.css">
+            <Button id="menu-btn" fx:id="returnBtn" cancelButton="true" focusTraversable="false" mnemonicParsing="false" prefHeight="64.0" prefWidth="75.0" style="-fx-background-radius: 0 0 0 16;" stylesheets="@../../../../target/classes/Styles/buttons.css">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -78,7 +77,7 @@
                                     <Image url="@../ImageIcos/icons8_user_24px.png" />
                                  </image>
                               </ImageView>
-                              <JFXTextField fx:id="fullname" focusColor="TOMATO" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="%fullname" style="-fx-background-color: #eee;" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
+                              <JFXTextField fx:id="nom" focusColor="TOMATO" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="Nom" style="-fx-background-color: #eee;" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
@@ -91,7 +90,7 @@
                               <Insets />
                            </VBox.margin>
                         </HBox>
-                        <Label fx:id="fullnameStatus" focusTraversable="false" prefHeight="17.0" prefWidth="240.0" style="-fx-alignment: center; -fx-background-color: red; -fx-background-radius: 10;" text="%fullname_error" textFill="WHITE" visible="false">
+                        <Label fx:id="fullnameStatus" focusTraversable="false" prefHeight="17.0" prefWidth="240.0" style="-fx-alignment: center; -fx-background-color: red; -fx-background-radius: 10;" text="nom_error" textFill="WHITE" visible="false">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -103,7 +102,7 @@
                                     <Image url="@../ImageIcos/icons8_iphone_32px.png" />
                                  </image>
                               </ImageView>
-                              <JFXTextField fx:id="phone" focusColor="TOMATO" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="%phone" style="-fx-background-color: #eee;" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
+                              <JFXTextField fx:id="phone" focusColor="TOMATO" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="Telephone" style="-fx-background-color: #eee;" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
@@ -113,7 +112,7 @@
                               </JFXTextField>
                            </children>
                         </HBox>
-                        <Label fx:id="phoneStatus" focusTraversable="false" prefHeight="17.0" prefWidth="240.0" style="-fx-alignment: center; -fx-background-color: red; -fx-background-radius: 10;" text="%phone_error" textFill="WHITE" visible="false">
+                        <Label fx:id="phoneStatus" focusTraversable="false" prefHeight="17.0" prefWidth="240.0" style="-fx-alignment: center; -fx-background-color: red; -fx-background-radius: 10;" text="phone_error" textFill="WHITE" visible="false">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -129,7 +128,7 @@
                                     <Image url="@../ImageIcos/icons8_name_32px.png" />
                                  </image>
                               </ImageView>
-                              <JFXTextField fx:id="username" focusColor="TOMATO" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="%username" style="-fx-background-color: #eee;" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
+                              <JFXTextField fx:id="prenom" focusColor="TOMATO" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="Prenom" style="-fx-background-color: #eee;" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
@@ -146,83 +145,72 @@
                            <children>
                               <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../ImageIcos/icons8_password_24px.png" />
+                                    <Image url="@../../../../target/classes/ImageIcos/email-open.png" />
                                  </image>
                               </ImageView>
-                              <JFXPasswordField fx:id="password" focusColor="TOMATO" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="%password" style="-fx-background-color: #eee;" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
+                              <JFXTextField fx:id="email" focusColor="TOMATO" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="Email" style="-fx-background-color: #eee;" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                  </padding>
-                              </JFXPasswordField>
+                              </JFXTextField>
                            </children>
                         </HBox>
                      </children>
                   </VBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="128.0" prefWidth="568.0" spacing="16.0">
+            <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="161.0" prefWidth="284.0">
                <children>
-                  <JFXToggleButton fx:id="admin" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="60.0" prefWidth="120.0" text="%admin" textFill="#3d4956" toggleColor="TOMATO" toggleLineColor="#dddddd" unToggleColor="#999999" unToggleLineColor="#dddddd" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </JFXToggleButton>
-                  <VBox fx:id="privs" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="384.0">
+                  <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="200.0" spacing="8.0">
                      <children>
-                        <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                           <children>
-                              <JFXCheckBox fx:id="products" checkedColor="TOMATO" contentDisplay="RIGHT" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="256.0" text="%product_management" textFill="#3d4956" HBox.hgrow="ALWAYS">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </JFXCheckBox>
-                              <JFXCheckBox fx:id="users" checkedColor="TOMATO" contentDisplay="RIGHT" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="256.0" text="%user_management" textFill="#3d4956" HBox.hgrow="ALWAYS">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </JFXCheckBox>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="70.0" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="200.0">
-                           <children>
-                              <JFXCheckBox fx:id="buys" checkedColor="TOMATO" contentDisplay="RIGHT" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="256.0" text="%buy_management" textFill="#3d4956" HBox.hgrow="ALWAYS">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </JFXCheckBox>
-                              <JFXCheckBox fx:id="sells" checkedColor="TOMATO" contentDisplay="RIGHT" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="256.0" text="%sell_management" textFill="#3d4956" HBox.hgrow="ALWAYS">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </JFXCheckBox>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <JFXButton fx:id="saveBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: tomato;" text="%add" textFill="#3d4956">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-                      <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="115.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../ImageIcos/icons8_add_24px.png" />
+                              <Image url="@../../../../target/classes/ImageIcos/icons8_password_24px.png" />
                            </image>
-                        </ImageView>              
-                          
-                      </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <VBox.margin>
-                  <Insets top="32.0" />
-               </VBox.margin>         
-            </JFXButton>
+                        </ImageView>
+                        <JFXPasswordField fx:id="password" focusColor="TOMATO" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="Mot de pass" style="-fx-background-color: #eee;" unFocusColor="#dddddd">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </JFXPasswordField>
+                        <JFXToggleButton fx:id="admin" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="60.0" prefWidth="275.0" text="Admin Principale" textFill="#3d4956" toggleColor="TOMATO" toggleLineColor="#dddddd" unToggleColor="#999999" unToggleLineColor="#dddddd">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXToggleButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="200.0" spacing="8.0" />
+                  <JFXButton fx:id="saveBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" prefHeight="52.0" prefWidth="192.0" style="-fx-background-color: tomato;" text="Ajouter" textFill="#3d4956">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                            <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="115.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ImageIcos/icons8_add_24px.png" />
+                                 </image>
+                              </ImageView>              
+                                
+                            </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets top="32.0" />
+                     </VBox.margin>         
+                  </JFXButton>
+               </children>
+            </VBox>
          </children>
       </VBox>
       <StackPane fx:id="stackPane" layoutX="-90.0" layoutY="59.0" prefHeight="150.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
