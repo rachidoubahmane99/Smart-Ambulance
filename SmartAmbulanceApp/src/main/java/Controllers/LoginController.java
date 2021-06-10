@@ -6,6 +6,8 @@
 package Controllers;
 
 import BdConnect.DbConnection;
+import MainConrollers.AdminMainController;
+import Models.Admin;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -19,6 +21,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.prefs.Preferences;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -27,6 +30,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import static javax.management.Query.value;
 import tray.animations.AnimationType;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
@@ -44,8 +48,9 @@ public class LoginController implements Initializable {
        Connection con = null;
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
-    
-
+      Admin d;
+    AdminMainController adm;
+public static int IdAdmin;
     
     @FXML
     private JFXTextField EmailTxt;
@@ -67,15 +72,31 @@ public class LoginController implements Initializable {
            
                if (validateCredentiel(EmailTxt.getText(),Passwordtxt.getText())) {
                SuccessNotification();
+              // adm = new AdminMainController();
+               //IdAdmin = adm.showadminId(EmailTxt.getText(), Passwordtxt.getText());
+               Preferences userPreferences = Preferences.userRoot();
+               userPreferences.put("adminEmail",EmailTxt.getText());
+               
+                 Stage stage;
+                Parent root;
+                stage = (Stage) loginBtn.getScene().getWindow();
+                root = FXMLLoader.load(getClass().getResource("/fxml/HomePage.fxml"));
+                Scene scene = new Scene(root);
+                scene.getStylesheets().add("/Styles/Styles.css");
+                stage.setScene(scene);
+                stage.show();
+               
+               
+               /*
                Stage stage = new Stage();
-               Parent root =FXMLLoader.load(getClass().getResource("/fxml/Admins.fxml"));
+               Parent root =FXMLLoader.load(getClass().getResource("/fxml/HomePage.fxml"));
                Scene scene = new Scene(root);
                scene.getStylesheets().add("/Styles/Styles.css");
                System.out.println(scene+"this is the Home  scene");
                stage.setScene(scene);
                stage.setResizable(true);
                stage.show();
-               
+               */
                }else{
                Failednotification();
                }

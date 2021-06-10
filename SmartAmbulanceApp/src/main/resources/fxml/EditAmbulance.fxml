@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="539.0" prefWidth="847.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EditAmbulanceController">
+   <children>
+      <HBox alignment="CENTER_RIGHT" layoutX="20.0" layoutY="77.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #198b98;" styleClass="top-bar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label focusTraversable="false" graphicTextGap="8.0" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="131.0" style="-fx-alignment: center;" text="Modifier Les Informations D'ambulance" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ImageIcos/icons8_edit_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="8.0" />
+               </padding>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#00000099" height="16.0" radius="7.5" width="16.0" />
+         </effect>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="159.0" layoutY="425.0" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="317.0" AnchorPane.leftAnchor="159.0" AnchorPane.rightAnchor="371.0">
+         <children>
+            <JFXButton fx:id="save" alignment="CENTER" buttonType="RAISED" defaultButton="true" prefHeight="33.0" prefWidth="145.0" style="-fx-background-color: #198b98;" text="Enregistrer" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ImageIcos/icons8_save_24px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="8.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+      <HBox layoutX="581.0" layoutY="151.0" prefHeight="203.0" prefWidth="248.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="195.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/ambulance%20Illustration.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="354.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="498.0" spacing="8.0">
+         <children>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageIcos/hearbeat%20Icon.png" />
+               </image>
+            </ImageView>
+            <JFXComboBox fx:id="hearbeat" focusColor="#198b98" labelFloat="true" prefHeight="35.0" prefWidth="473.0" promptText="Veuillez Choisir" unFocusColor="#dddddd" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="115.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="498.0" spacing="8.0">
+         <children>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageIcos/ambulance%20icon%20(2).png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="matricule" focusColor="#198b98" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="Mtricule :" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </JFXTextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="16.0" layoutY="184.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="498.0" spacing="8.0">
+         <children>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageIcos/icons8_user_24px.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="nom" focusColor="#198b98" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="Nom Chaufeur" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </JFXTextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="16.0" layoutY="243.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="498.0" spacing="8.0">
+         <children>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageIcos/gps%20Icon.png" />
+               </image>
+            </ImageView>
+            <JFXComboBox fx:id="gps" focusColor="#198b98" labelFloat="true" prefHeight="35.0" prefWidth="473.0" promptText="Veuillez Choisir" unFocusColor="#dddddd" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="300.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="498.0" spacing="8.0">
+         <children>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageIcos/temperateur%20Icon.png" />
+               </image>
+            </ImageView>
+            <JFXComboBox fx:id="temperateur" focusColor="#198b98" labelFloat="true" prefHeight="35.0" prefWidth="473.0" promptText="Veuillez Choisir" unFocusColor="#dddddd" />
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Styles/buttons.css" />
+      <URL value="@../Styles/Styles.css" />
+   </stylesheets>
+</AnchorPane>

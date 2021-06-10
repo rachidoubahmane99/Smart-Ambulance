@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminProfileController">
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="480.0" prefWidth="660.0" spacing="16.0">
+         <children>
+            <VBox alignment="TOP_CENTER" maxWidth="535.0" prefHeight="480.0" prefWidth="535.0" spacing="8.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+               <children>
+                  <Circle fx:id="adminIV" fill="WHITE" radius="80.0" stroke="#3d4956" strokeType="INSIDE">
+                     <cursor>
+                       
+                     </cursor>
+                     <VBox.margin>
+                        <Insets bottom="16.0" />
+                     </VBox.margin>
+                  </Circle>
+                  <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="nom" maxWidth="1.7976931348623157E308" minWidth="96.0" prefWidth="96.0" text="Nom :" textFill="#3d4956" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="16.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="clientPhone" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="171.0" textFill="TOMATO" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="242.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="prenom" maxWidth="1.7976931348623157E308" minWidth="96.0" prefWidth="96.0" text="Prénom :" textFill="#3d4956" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="16.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="regCommerce" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="171.0" textFill="TOMATO" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="372.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="email" maxWidth="1.7976931348623157E308" minWidth="96.0" prefWidth="96.0" text="Telephone :" textFill="#3d4956" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="16.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="clientNIF" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="171.0" textFill="TOMATO" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="399.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="telephone" maxWidth="1.7976931348623157E308" minWidth="96.0" prefWidth="96.0" text="Email :" textFill="#3d4956" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="16.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="clientAI" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="171.0" textFill="TOMATO" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="64.0" prefWidth="267.0" spacing="16.0">
+                     <children>
+                        <JFXButton fx:id="updateadminBtn" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#GoToUpdateView" prefHeight="39.0" prefWidth="40.0" ripplerFill="TOMATO" style="-fx-background-color: #198b98;" styleClass="circle-primary-btn" text="edit_admin" textFill="#3d4956">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ImageIcos/icons8_edit_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="deleteAdminBtn" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="50.0" layoutY="10.0" prefHeight="39.0" prefWidth="40.0" ripplerFill="RED" style="-fx-background-color: #198b98;" styleClass="circle-red-btn" text="delete_admin" textFill="#3d4956">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ImageIcos/icons8_delete_32px_1_1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="changepassBtn" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#goToChangePassView" prefHeight="39.0" prefWidth="40.0" ripplerFill="TOMATO" style="-fx-background-color: #198b98;" styleClass="circle-primary-btn" text="change_pass" textFill="#3d4956">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ImageIcos/icons8_forgot_password_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

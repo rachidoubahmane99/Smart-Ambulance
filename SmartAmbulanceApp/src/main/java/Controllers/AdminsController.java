@@ -34,6 +34,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -124,28 +126,40 @@ public class AdminsController implements Initializable {
     }
 
     @FXML
-    private void goToAddView(ActionEvent event) {
+    private void goToAddView(ActionEvent event) throws IOException {
         
         //NewUserController.edit = false;
 
         //app.switchScene("/fxml/NewUser.fxml");
         //System.out.println("Controllers.AdminsController.goToAddView()");
-        
-        
+         Stage stage;
+        Parent root;
+stage = (Stage) AddNewAdminBtn.getScene().getWindow();
+     root = FXMLLoader.load(getClass().getResource("/fxml/NewUser.fxml"));
+Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+/*
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/NewUser.fxml"));
     Parent root;
     try 
     {
         root = (Parent)loader.load();
         Scene scene = new Scene(root);
+        scene.getStylesheets().add("/Styles/Styles.css");
          scene.getStylesheets().add("/Styles/buttons.css");
-   
+               Stage stage = new Stage();
+                  stage.setScene(scene);
+               stage.setResizable(true);
+               stage.show();
         app.primaryStage.setScene(scene);
+        
     } 
     catch (IOException e)
     {
         e.printStackTrace();
     }
+*/
 }
     
         

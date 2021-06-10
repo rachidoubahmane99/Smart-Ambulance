@@ -1,35 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" minWidth="-Infinity" prefHeight="600.0" prefWidth="558.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EditAdminController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="539.0" prefWidth="847.0" style="-fx-background-color: white;" stylesheets="@../Styles/buttons.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddPatientController">
    <children>
-      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="67.0" prefHeight="64.0" prefWidth="200.0" style="-fx-background-color: #198b98;" styleClass="top-bar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER_RIGHT" layoutX="20.0" layoutY="77.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #198b98;" styleClass="top-bar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label focusTraversable="false" graphicTextGap="8.0" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="131.0" text="Modifier Mon Profile" textFill="#eeeeee" HBox.hgrow="ALWAYS">
+            <Label focusTraversable="false" graphicTextGap="8.0" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="131.0" style="-fx-alignment: center;" text="Ajouter Nouveau Patient" textFill="WHITE" HBox.hgrow="ALWAYS">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../ImageIcos/icons8_edit_profile_32px.png" />
+                        <Image url="@../ImageIcos/icons8_add_user_male_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -40,33 +36,44 @@
                   <Insets right="8.0" />
                </padding>
             </Label>
-            <Button id="menu-btn" fx:id="returnBtn" cancelButton="true" focusTraversable="false" mnemonicParsing="false" prefHeight="64.0" prefWidth="75.0" style="-fx-background-radius: 0 0 0 16;" stylesheets="@../../../../target/classes/Styles/buttons.css">
+         </children>
+         <effect>
+            <DropShadow color="#00000099" height="16.0" radius="7.5" width="16.0" />
+         </effect>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="265.0" layoutY="467.0" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="317.0" AnchorPane.leftAnchor="265.0" AnchorPane.rightAnchor="265.0">
+         <children>
+            <JFXButton fx:id="save" alignment="CENTER" buttonType="RAISED" defaultButton="true" prefHeight="33.0" prefWidth="145.0" style="-fx-background-color: #198b98;" text="Enregistrer" textFill="WHITE">
                <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../ImageIcos/icons8_left_3_48px.png" />
+                        <Image url="@../ImageIcos/icons8_save_24px.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <VBox.margin>
+                  <Insets top="8.0" />
+               </VBox.margin>
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
-            </Button>
+            </JFXButton>
+         </children>
+      </VBox>
+      <HBox layoutX="517.0" layoutY="151.0" prefHeight="188.0" prefWidth="292.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="288.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/patient%20Ilustration.png" />
+               </image>
+            </ImageView>
          </children>
       </HBox>
-      <VBox alignment="TOP_CENTER" layoutX="12.0" layoutY="98.0" prefHeight="440.0" prefWidth="570.0" spacing="8.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+      <HBox layoutX="14.0" layoutY="88.0" prefHeight="174.0" prefWidth="498.0">
          <children>
-            <Circle fx:id="userIV" fill="WHITE" radius="88.0" stroke="#3d4956" strokeType="INSIDE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <VBox.margin>
-                  <Insets bottom="8.0" />
-               </VBox.margin>
-            </Circle>
-            <HBox alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="182.0" prefWidth="651.0" spacing="8.0">
+            <HBox alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="238.0" prefWidth="452.0" spacing="8.0">
                <children>
-                  <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="161.0" prefWidth="284.0" HBox.hgrow="ALWAYS">
+                  <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="317.0" prefWidth="247.0" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="200.0" spacing="8.0">
                            <children>
@@ -143,10 +150,10 @@
                            <children>
                               <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../target/classes/ImageIcos/email-open.png" />
+                                    <Image url="@../ImageIcos/patient.png" />
                                  </image>
                               </ImageView>
-                              <JFXTextField fx:id="email" focusColor="#198b98" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="Email" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
+                              <JFXTextField fx:id="maladie" focusColor="#198b98" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="Maladie" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
@@ -160,41 +167,48 @@
                   </VBox>
                </children>
             </HBox>
-            <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="534.0">
-               <children>
-                  <JFXButton fx:id="saveBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" prefHeight="42.0" prefWidth="267.0" style="-fx-background-color: #198b98;" text="Enregistrer les Modification" textFill="#3d4956">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="115.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../ImageIcos/icons8_save_close_24px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <VBox.margin>
-                        <Insets top="32.0" />
-                     </VBox.margin>
-                  </JFXButton>
-               </children>
-            </VBox>
          </children>
-      </VBox>
-      <StackPane fx:id="stackPane" layoutX="-90.0" layoutY="59.0" prefHeight="60.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
+      </HBox>
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="246.0" maxWidth="1.7976931348623157E308" prefHeight="105.0" prefWidth="498.0" spacing="8.0">
          <children>
-            <JFXDialog fx:id="dialog" />
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageIcos/medical-file.png" />
+               </image>
+            </ImageView>
+            <JFXTextArea fx:id="medicalNotes" focusColor="#198b98" prefHeight="116.0" prefWidth="523.0" promptText="Medical Notes" style="-fx-background-color: white;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXTextArea>
          </children>
-      </StackPane>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="359.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="498.0" spacing="8.0">
+         <children>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageIcos/address.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="adress" focusColor="#198b98" labelFloat="true" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="250.0" promptText="Adress" unFocusColor="#dddddd" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </JFXTextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="419.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="498.0" spacing="8.0">
+         <children>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageIcos/calendar.png" />
+               </image>
+            </ImageView>
+            <JFXDatePicker fx:id="dateJoin" prefHeight="50.0" prefWidth="457.0" />
+         </children>
+      </HBox>
    </children>
-   <effect>
-      <DropShadow color="#000000b2" height="15.0" radius="7.0" width="15.0" />
-   </effect>
-   <stylesheets>
-      <URL value="@../Styles/buttons.css" />
-      <URL value="@../Styles/Styles.css" />
-   </stylesheets>
 </AnchorPane>
