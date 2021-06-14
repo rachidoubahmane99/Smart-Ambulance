@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -68,5 +69,85 @@ public class AmbulanceTravelMainController {
         }
         return ambulancesTravel;
     }
+    
+    
+       //get Count
+      public int CountRows() throws SQLException{
+          int count =0;
+          try {
+           con = DbConnection.getConnection();
+            stmt = con.createStatement();
+
+        resultSet =stmt.executeQuery("SELECT COUNT(*) FROM AmbulanceTravel");
+        while (resultSet.next()) {
+                  count = resultSet.getInt(1);
+                  
+              }
+            } catch (SQLException ex) {
+            System.out.println("Error");
+        }
+      return count;
+      }
+    
+      public ArrayList<Integer> getCountTravels(){
+          
+          ArrayList<Integer> arrayCount = new ArrayList<>();
+          Date datetravel = null;
+          try {
+           con = DbConnection.getConnection();
+            stmt = con.createStatement();
+
+        resultSet =stmt.executeQuery("SELECT travelDate FROM AmbulanceTravel");
+        while (resultSet.next()) {
+                  datetravel = resultSet.getDate(1);
+                  arrayCount.add(getTravelCountByDate(datetravel));
+                  
+                  
+              }
+            } catch (SQLException ex) {
+            System.out.println("Error");
+        }
+             return arrayCount;
+      }
+      
+      
+      public int getTravelCountByDate(Date date){
+          int count =0;
+          try {
+           con = DbConnection.getConnection();
+            stmt = con.createStatement();
+
+        resultSet =stmt.executeQuery("SELECT COUNT(*) FROM AmbulanceTravel  WHERE travelDate = '"+date+"'");
+        while (resultSet.next()) {
+                  count = resultSet.getInt(1);
+                  
+              }
+            } catch (SQLException ex) {
+            System.out.println("Error");
+        }
+             return count;
+      }
+      
+      public ArrayList<Date> getAllTravelDates(){
+          
+          ArrayList<Date> arrayDates = new ArrayList<>();
+          Date datetravel = null;
+          try {
+           con = DbConnection.getConnection();
+            stmt = con.createStatement();
+
+        resultSet =stmt.executeQuery("SELECT travelDate FROM AmbulanceTravel");
+        while (resultSet.next()) {
+                  datetravel = resultSet.getDate(1);
+                  arrayDates.add(datetravel);
+                  
+                  
+              }
+            } catch (SQLException ex) {
+            System.out.println("Error");
+        }
+             return arrayDates;
+      }
+      
     
 }

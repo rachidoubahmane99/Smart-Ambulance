@@ -13,6 +13,7 @@ import Models.Patient;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.mycompany.smartambulanceapp.App;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -21,6 +22,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -35,6 +39,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 
 /**
  * FXML Controller class
@@ -47,7 +55,7 @@ public class PatientsController implements Initializable {
      App app = new App();
      Patient p;
     PatientMainController pa;
-    //Notification nt = new Notification();
+    Notification nt = new Notification();
    
     
     ResultSet resultSet = null;
@@ -80,6 +88,8 @@ public class PatientsController implements Initializable {
     private JFXButton updatebtn;
     @FXML
     private JFXButton delete;
+    @FXML
+    private JFXButton export;
 
     
     
@@ -101,8 +111,19 @@ public class PatientsController implements Initializable {
         phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
         joinDateColumn.setCellValueFactory(new PropertyValueFactory<>("joinDate"));
 
+        
+        
+        export.setOnAction(Action -> {
+            
+        try {
+            export();
+        } catch (IOException ex) {
+                Logger.getLogger(PatientsController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+         });
+    }
        
-    }    
+        
     
     
     
@@ -141,6 +162,51 @@ Scene scene = new Scene(root);
 }
     
     
+    // back and home Method
+        @FXML
+    private void GoToHomeView(ActionEvent event) throws IOException {
+       Patient p;
+         Stage stage;
+        Parent root;
+    stage = (Stage) updatebtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
+  
+     public void export() throws IOException {
+        Workbook workbook = new HSSFWorkbook();
+        Sheet spreadsheet = workbook.createSheet("sample");
+
+        Row row = spreadsheet.createRow(0);
+
+        for (int j = 0; j < tableView.getColumns().size(); j++) {
+            row.createCell(j).setCellValue(tableView.getColumns().get(j).getText());
+        }
+
+        for (int i = 0; i < tableView.getItems().size(); i++) {
+            row = spreadsheet.createRow(i + 1);
+            for (int j = 0; j < tableView.getColumns().size(); j++) {
+                if(tableView.getColumns().get(j).getCellData(i) != null) { 
+                    row.createCell(j).setCellValue(tableView.getColumns().get(j).getCellData(i).toString()); 
+                }
+                else {
+                    row.createCell(j).setCellValue("");
+                }   
+            }
+        }
+
+        FileOutputStream fileOut = new FileOutputStream("Exported.xls");
+        workbook.write(fileOut);
+        fileOut.close();
+         nt .SuccessNotification("File Exporté avec Sucess", "File Exported Successfully");
+         System.out.println("File exported");
+        //Platform.exit();
+    }
     
     
 }

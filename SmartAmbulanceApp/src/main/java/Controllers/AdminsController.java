@@ -7,6 +7,7 @@ package Controllers;
 
 import BdConnect.DbConnection;
 import Models.Admin;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.mycompany.smartambulanceapp.App;
 import java.io.IOException;
@@ -69,6 +70,8 @@ public class AdminsController implements Initializable {
     private TableColumn<Admin,String> roleColumn;
     @FXML
     private TableColumn<Admin,Integer> statusColumn;
+     @FXML
+    private JFXButton homebtn;
 
     /**
      * Initializes the controller class.
@@ -222,5 +225,22 @@ Scene scene = new Scene(root);
 
         return resultSet;
     }
+    
+    
+    
+      // back and home Method
+        @FXML
+    private void GoToHomeView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) homebtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
     
 }

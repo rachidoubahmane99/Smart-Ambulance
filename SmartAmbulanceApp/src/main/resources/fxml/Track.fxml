@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -37,13 +38,31 @@
                   <Insets right="8.0" />
                </padding>
             </Label>
+            <JFXButton fx:id="homebtn" onAction="#GoToHomeView" prefHeight="33.0" prefWidth="93.0" text="Home" textFill="#f5cb4d">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ImageIcos/home%20icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="backBtn" onAction="#GoToBackView" prefHeight="36.0" prefWidth="86.0" text="Back" textFill="#f5cb4e">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ImageIcos/back%20icon_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
          <effect>
             <DropShadow color="#00000099" height="16.0" radius="7.5" width="16.0" />
          </effect>
       </HBox>
-      <WebView fx:id="MapsWebView" layoutX="205.0" layoutY="68.0" prefHeight="290.0" prefWidth="609.0" />
-      <HBox alignment="CENTER_LEFT" layoutX="28.0" layoutY="413.0" prefHeight="32.0" prefWidth="297.0">
+      <WebView fx:id="MapsWebView" layoutX="164.0" layoutY="57.0" prefHeight="329.0" prefWidth="678.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="28.0" layoutY="434.0" prefHeight="32.0" prefWidth="297.0">
          <children>
             <Label maxWidth="1.7976931348623157E308" minWidth="96.0" prefWidth="96.0" text="Nom :" textFill="#3d4956" HBox.hgrow="ALWAYS">
                <font>
@@ -60,7 +79,7 @@
             </Label>
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" layoutX="28.0" layoutY="445.0" prefHeight="32.0" prefWidth="297.0">
+      <HBox alignment="CENTER_LEFT" layoutX="28.0" layoutY="466.0" prefHeight="32.0" prefWidth="297.0">
          <children>
             <Label fx:id="nom2" maxWidth="1.7976931348623157E308" minWidth="96.0" prefWidth="96.0" text="Maladie :" textFill="#3d4956" HBox.hgrow="ALWAYS">
                <font>
@@ -77,13 +96,92 @@
             </Label>
          </children>
       </HBox>
-      <HBox layoutX="28.0" layoutY="152.0" prefHeight="123.0" prefWidth="129.0" style="-fx-background-color: white;">
+      <HBox layoutX="28.0" layoutY="152.0" prefHeight="91.0" prefWidth="103.0" style="-fx-background-color: white;">
          <children>
-            <ImageView fitHeight="137.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="119.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/track%20illus.png" />
                </image>
             </ImageView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="105.0" layoutY="381.0" prefHeight="32.0" prefWidth="661.0">
+         <children>
+            <Label maxWidth="1.7976931348623157E308" minWidth="0.0" prefHeight="11.0" prefWidth="0.0" text="coordonnées gps :" textFill="#3d4956" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="16.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="gpsCord" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="29.0" prefWidth="205.0" textFill="TOMATO" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="Heartbeathbx" alignment="CENTER_LEFT" layoutX="352.0" layoutY="420.0" prefHeight="91.0" prefWidth="220.0" style="-fx-border-width: 2; -fx-border-style: solid inside; -fx-border-color: #198b98;">
+         <children>
+            <ImageView fitHeight="61.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/HeartBeat.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="heratbeat" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="67.0" prefWidth="70.0" textFill="TOMATO" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="TmpHbox" alignment="CENTER_LEFT" layoutX="602.0" layoutY="419.0" prefHeight="75.0" prefWidth="194.0" style="-fx-border-width: 2; -fx-border-style: solid inside; -fx-border-color: #198b98;">
+         <children>
+            <ImageView fitHeight="89.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/temperateur%20image.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="temperateurlbl" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="76.0" prefWidth="114.0" textFill="TOMATO" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="342.0" layoutY="516.0" prefHeight="13.0" prefWidth="232.0">
+         <children>
+            <Label maxWidth="1.7976931348623157E308" minWidth="96.0" prefWidth="96.0" text="Sensor Serie :" textFill="#3d4956" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="16.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="heartbSerie" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="171.0" textFill="TOMATO" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="602.0" layoutY="515.0" prefHeight="13.0" prefWidth="232.0">
+         <children>
+            <Label maxWidth="1.7976931348623157E308" minWidth="96.0" prefWidth="96.0" text="Sensor Serie :" textFill="#3d4956" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="16.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="tempSerieLbl" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="171.0" textFill="TOMATO" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
    </children>

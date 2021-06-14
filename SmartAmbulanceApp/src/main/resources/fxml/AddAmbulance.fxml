@@ -25,7 +25,7 @@
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../ImageIcos/icons8_add_24px.png" />
+                        <Image url="@../ImageIcos/icons8_plus_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -36,6 +36,24 @@
                   <Insets right="8.0" />
                </padding>
             </Label>
+            <JFXButton fx:id="homebtn" onAction="#GoToHomeView" prefHeight="37.0" prefWidth="95.0" text="Home" textFill="#f5cb4d">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ImageIcos/home%20icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="backBtn" layoutX="791.0" layoutY="15.0" onAction="#GoToBackView" prefHeight="34.0" prefWidth="98.0" text="Back" textFill="#f5cb4e">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ImageIcos/back%20icon_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
          <effect>
             <DropShadow color="#00000099" height="16.0" radius="7.5" width="16.0" />

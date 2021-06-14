@@ -38,11 +38,11 @@
       <JFXTextField fx:id="searchTextField" focusColor="#4dadf7" layoutX="117.0" layoutY="38.0" prefHeight="27.0" prefWidth="175.0" promptText="Chercher Ambulance" />
       <VBox alignment="CENTER" layoutX="649.0" layoutY="28.0" maxWidth="1.7976931348623157E308" prefHeight="47.0" prefWidth="283.0">
          <children>
-            <JFXButton fx:id="addbtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" onAction="#goToAddView" prefHeight="33.0" prefWidth="237.0" style="-fx-background-color: #198b98;" text="Ajouter Nouvelle Ambulance" textFill="WHITE">
+            <JFXButton fx:id="addbtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" onAction="#goToAddView" prefHeight="39.0" prefWidth="253.0" style="-fx-background-color: #198b98;" text="Ajouter Nouvelle Ambulance" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../ImageIcos/icons8_add_24px.png" />
+                        <Image url="@../ImageIcos/icons8_plus_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -66,6 +66,15 @@
             <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ImageIcos/icons8_delete_32px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="homebtn" layoutX="864.0" layoutY="-5.0" onAction="#GoToHomeView" prefHeight="39.0" prefWidth="92.0" text="Home" textFill="#f5cb4d">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageIcos/home%20icon.png" />
                </image>
             </ImageView>
          </graphic>

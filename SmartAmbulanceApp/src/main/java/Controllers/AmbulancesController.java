@@ -69,6 +69,8 @@ public class AmbulancesController implements Initializable{
     private JFXButton updatebtn;
     @FXML
     private JFXButton delete;
+    @FXML
+    private JFXButton homebtn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -76,7 +78,7 @@ public class AmbulancesController implements Initializable{
         amc = new AmbulanceMainController();
          tableView.setItems(amc.getAllAmbulances());
         matriculeColumn.setCellValueFactory(new PropertyValueFactory<>("matricule"));
-        NomColumn.setCellValueFactory(new PropertyValueFactory<>("NomChaufeur"));
+        NomColumn.setCellValueFactory(new PropertyValueFactory<>("NomChafeur"));
         GpsSensorColumn.setCellValueFactory(new PropertyValueFactory<>("GpsSensor"));
         TemperateurColumn.setCellValueFactory(new PropertyValueFactory<>("Temperateur"));
         HearBeatColumn.setCellValueFactory(new PropertyValueFactory<>("HearBeat"));
@@ -118,6 +120,20 @@ Scene scene = new Scene(root);
 }
 
    
+          // back and home Method
+        @FXML
+    private void GoToHomeView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) homebtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
 
     
 }

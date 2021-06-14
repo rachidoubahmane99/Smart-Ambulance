@@ -9,6 +9,7 @@ import static Controllers.NewUserController.saveSelectedImage;
 import Include.Notification;
 import MainConrollers.AdminMainController;
 import Models.Admin;
+import Models.Patient;
 import animatefx.animation.ZoomIn;
 import animatefx.animation.ZoomOut;
 import com.jfoenix.controls.JFXButton;
@@ -63,6 +64,8 @@ public class AdminProfileController implements Initializable {
     private JFXButton deleteAdminBtn;
     @FXML
     private JFXButton changepassBtn;
+     @FXML
+    private JFXButton homebtn;
     
     public static String userDirectory = System.getProperty("user.dir");
     public static String profileImGpath =userDirectory+"/src/main/resources/AdminProfileIMG/default.png";
@@ -175,6 +178,21 @@ public class AdminProfileController implements Initializable {
       
 
         }
+     
+     // back and home Method
+        @FXML
+    private void GoToHomeView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) homebtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
      
      
      

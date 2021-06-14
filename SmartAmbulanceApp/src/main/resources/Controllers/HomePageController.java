@@ -33,7 +33,7 @@ public class HomePageController implements Initializable {
     @FXML
     private JFXButton ambulanceBtn;
     @FXML
-    private JFXButton travelBtn;
+    private JFXButton StatisticsBtn;
     @FXML
     private JFXButton TrackBtn;
     
@@ -93,11 +93,11 @@ Scene scene = new Scene(root);
     }
     
      @FXML
-    private void goToTravelView(ActionEvent event) throws IOException {
+    private void goToStatsView(ActionEvent event) throws IOException {
          Stage stage;
         Parent root;
-stage = (Stage) travelBtn.getScene().getWindow();
-     root = FXMLLoader.load(getClass().getResource("/fxml/NewAmbulanceTravel.fxml"));
+stage = (Stage) StatisticsBtn.getScene().getWindow();
+     root = FXMLLoader.load(getClass().getResource("/fxml/Statistics.fxml"));
 Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

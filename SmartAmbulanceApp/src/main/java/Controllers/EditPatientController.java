@@ -12,6 +12,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.Instant;
@@ -21,9 +22,14 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  *
@@ -53,6 +59,10 @@ public class EditPatientController implements Initializable {
     private JFXDatePicker dateJoin;
     @FXML
     private JFXButton save;
+     @FXML
+    private JFXButton homebtn;
+      @FXML
+    private JFXButton backBtn;
 
         Patient p;
     PatientMainController pa;
@@ -121,5 +131,36 @@ public class EditPatientController implements Initializable {
         
               }
     }
+    
+    
+        // back and home Method
+        @FXML
+    private void GoToHomeView(ActionEvent event) throws IOException {
+       Patient p;
+         Stage stage;
+        Parent root;
+    stage = (Stage) homebtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
+    @FXML
+    private void GoToBackView(ActionEvent event) throws IOException {
+       Patient p;
+         Stage stage;
+        Parent root;
+    stage = (Stage) backBtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Patients.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
     
 }

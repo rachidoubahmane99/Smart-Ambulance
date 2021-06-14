@@ -73,6 +73,10 @@ public class EditAdminController implements Initializable {
     private StackPane stackPane;
     @FXML
     private JFXDialog dialog;
+    @FXML
+    private JFXButton homebtn;
+    @FXML
+    private JFXButton backBtn;
 
     
     Admin d;
@@ -113,27 +117,7 @@ public class EditAdminController implements Initializable {
         });
       
       
-      //back button 
-      
-      returnBtn.setOnAction(Action -> {
-            
-            try {
-               
-                 Stage stage;
-        Parent root;
-        stage = (Stage) returnBtn.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("/fxml/AdminProfile.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
 
-                
-            } catch (IOException ex) {
-                
-            }
-        });
-      
-      //end of back button
        
     }    
     
@@ -273,5 +257,34 @@ public class EditAdminController implements Initializable {
       
 
         }
+         
+         
+         // back and home Method
+        @FXML
+    private void GoToHomeView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) homebtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
+    @FXML
+    private void GoToBackView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) backBtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/AdminProfile.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
     
 }

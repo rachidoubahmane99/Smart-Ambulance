@@ -104,4 +104,92 @@ public class AmbulanceMainController {
        return ambulances;
     }
     
+        
+        // get HeatBeat Sensor Serie by Id
+      public String getHeartBeatSensorById(String matricule) {
+
+       String SensorSerie="";
+        try {
+           con = DbConnection.getConnection();
+            stmt = con.createStatement();
+        //String query="select * from Admin where nom like'"+searchInput+"' ";
+        resultSet =stmt.executeQuery("SELECT * FROM Ambulance where matricule ='"+matricule+"'");
+        
+            while (resultSet.next()) {
+                SensorSerie = resultSet.getString("HearBeat");
+                
+
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error");
+        }
+        return SensorSerie;
+    }
+     
+      
+       // get Temperateur Sensor Serie by Id
+      public String getTemperateurSensorById(String matricule) {
+
+       String SensorSerie="";
+        try {
+           con = DbConnection.getConnection();
+            stmt = con.createStatement();
+        //String query="select * from Admin where nom like'"+searchInput+"' ";
+        resultSet =stmt.executeQuery("SELECT * FROM Ambulance where matricule ='"+matricule+"'");
+        
+            while (resultSet.next()) {
+                SensorSerie = resultSet.getString("Temperateur");
+                
+
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error");
+        }
+        return SensorSerie;
+    }
+     
+      // get Gps Sensor Serie by Id
+      public String getGpsSensorById(String matricule) {
+
+       String SensorSerie="";
+        try {
+           con = DbConnection.getConnection();
+            stmt = con.createStatement();
+        //String query="select * from Admin where nom like'"+searchInput+"' ";
+        resultSet =stmt.executeQuery("SELECT * FROM Ambulance where matricule ='"+matricule+"'");
+        
+            while (resultSet.next()) {
+                SensorSerie = resultSet.getString("GpsSensor");
+                
+
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error");
+        }
+        return SensorSerie;
+    }
+      
+      
+      //get Count
+      public int CountRows() throws SQLException{
+          int count=0;
+          try {
+           con = DbConnection.getConnection();
+            stmt = con.createStatement();
+
+        resultSet =stmt.executeQuery("SELECT COUNT(*) FROM Ambulance");
+        while (resultSet.next()) {
+                  count = resultSet.getInt(1);
+                  
+              }
+            } catch (SQLException ex) {
+            System.out.println("Error");
+        }
+      return count;
+      }
+      
+      
 }

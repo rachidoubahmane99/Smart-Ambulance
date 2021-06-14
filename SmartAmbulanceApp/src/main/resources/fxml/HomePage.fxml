@@ -49,7 +49,7 @@
             <Image url="@../Images/smart%20ambulance%20logo.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="profileBtn" layoutX="518.0" layoutY="103.0" onAction="#goToProfileView" prefHeight="96.0" prefWidth="128.0">
+      <JFXButton fx:id="profileBtn" ellipsisString="" layoutX="518.0" layoutY="103.0" onAction="#goToProfileView" prefHeight="96.0" prefWidth="128.0">
          <graphic>
             <ImageView cache="true" fitHeight="106.0" fitWidth="113.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" style="-fx-effect: border(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" styleClass="ImgMenu">
                <image>
@@ -58,16 +58,16 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="adminsBtn" layoutX="85.0" layoutY="258.0" onAction="#goToAdminsView" prefHeight="108.0" prefWidth="114.0">
+      <JFXButton fx:id="adminsBtn" ellipsisString="" layoutX="85.0" layoutY="258.0" onAction="#goToAdminsView" prefHeight="108.0" prefWidth="114.0">
          <graphic>
             <ImageView cache="true" fitHeight="96.0" fitWidth="129.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" style="-fx-effect: border(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" styleClass="ImgMenu">
                <image>
-                  <Image url="@../Images/historique.png" />
+                  <Image url="@../ImageIcos/Admins%20Icon.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="patientBtn" layoutX="305.0" layoutY="111.0" onAction="#goToPatientView" prefHeight="108.0" prefWidth="128.0">
+      <JFXButton fx:id="patientBtn" ellipsisString="" layoutX="305.0" layoutY="111.0" onAction="#goToPatientView" prefHeight="108.0" prefWidth="128.0">
          <graphic>
             <ImageView cache="true" fitHeight="96.0" fitWidth="130.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" style="-fx-effect: border(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" styleClass="ImgMenu">
                <image>
@@ -76,7 +76,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="ambulanceBtn" layoutX="85.0" layoutY="105.0" onAction="#goToAmbulancesView" prefHeight="108.0" prefWidth="148.0">
+      <JFXButton fx:id="ambulanceBtn" ellipsisString="" layoutX="85.0" layoutY="105.0" onAction="#goToAmbulancesView" prefHeight="108.0" prefWidth="148.0">
          <graphic>
             <ImageView cache="true" fitHeight="96.0" fitWidth="130.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" style="-fx-effect: border(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" styleClass="ImgMenu">
                <image>
@@ -85,7 +85,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="travelBtn" layoutX="507.0" layoutY="262.0" onAction="#goToTravelView" prefHeight="47.0" prefWidth="121.0">
+      <JFXButton fx:id="StatisticsBtn" ellipsisString="" layoutX="507.0" layoutY="262.0" onAction="#goToStatsView" prefHeight="47.0" prefWidth="121.0">
          <graphic>
             <ImageView cache="true" fitHeight="96.0" fitWidth="130.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" style="-fx-effect: border(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" styleClass="ImgMenu">
                <image>
@@ -94,11 +94,20 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="TrackBtn" layoutX="305.0" layoutY="257.0" onAction="#goToTrackView" prefHeight="124.0" prefWidth="113.0">
+      <JFXButton fx:id="TrackBtn" ellipsisString="" layoutX="305.0" layoutY="257.0" onAction="#goToTrackView" prefHeight="124.0" prefWidth="113.0">
          <graphic>
             <ImageView cache="true" fitHeight="106.0" fitWidth="128.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" style="-fx-effect: border(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" styleClass="ImgMenu">
                <image>
-                  <Image url="@../Images/track%20gps%20icone.png" />
+                  <Image url="@../Images/Ambulance%20track.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="LogoutBtn" layoutX="609.0" layoutY="2.0" prefHeight="20.0" prefWidth="124.0" text="Logout" textFill="RED">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageIcos/Logout.png" />
                </image>
             </ImageView>
          </graphic>

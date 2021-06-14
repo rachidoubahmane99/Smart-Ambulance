@@ -18,6 +18,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.Instant;
@@ -28,8 +29,13 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  *
@@ -46,6 +52,10 @@ public class NewAmbulanceTravelController implements Initializable  {
     private JFXDatePicker datetravel;
     @FXML
     private JFXButton save;
+    @FXML
+    private JFXButton homebtn;
+    @FXML
+    private JFXButton backBtn;
 
         AmbulanceTravel am;
     AmbulanceTravelMainController amc;
@@ -126,4 +136,33 @@ public class NewAmbulanceTravelController implements Initializable  {
     
 }
 
+    
+    // back and home Method
+        @FXML
+    private void GoToHomeView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) homebtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
+    @FXML
+    private void GoToBackView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) backBtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Ambulances.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
+    
 }

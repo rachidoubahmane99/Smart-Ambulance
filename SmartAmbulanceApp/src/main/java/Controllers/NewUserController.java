@@ -42,10 +42,14 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javax.swing.Action;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
@@ -78,6 +82,10 @@ public class NewUserController implements Initializable {
     private StackPane stackPane;
     @FXML
     private JFXDialog dialog;
+    @FXML
+    private JFXButton homebtn;
+    @FXML
+    private JFXButton backBtn;
 
      File selectedFile = null;
     public static String userDirectory = System.getProperty("user.dir");
@@ -286,5 +294,32 @@ public class NewUserController implements Initializable {
     }
 
       
-      
+       // back and home Method
+        @FXML
+    private void GoToHomeView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) homebtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
+    @FXML
+    private void GoToBackView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) backBtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Admins.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
+    
 }

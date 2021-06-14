@@ -6,7 +6,6 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -22,7 +21,7 @@
    <children>
       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="67.0" prefHeight="64.0" prefWidth="200.0" style="-fx-background-color: #198b98;" styleClass="top-bar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label focusTraversable="false" graphicTextGap="8.0" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="131.0" text="Modifier Mon Profile" textFill="#eeeeee" HBox.hgrow="ALWAYS">
+            <Label focusTraversable="false" graphicTextGap="8.0" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="131.0" text="Modifier Mon Profile" textFill="WHITE" HBox.hgrow="ALWAYS">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -40,25 +39,30 @@
                   <Insets right="8.0" />
                </padding>
             </Label>
-            <Button id="menu-btn" fx:id="returnBtn" cancelButton="true" focusTraversable="false" mnemonicParsing="false" prefHeight="64.0" prefWidth="75.0" style="-fx-background-radius: 0 0 0 16;" stylesheets="@../../../../target/classes/Styles/buttons.css">
+            <JFXButton fx:id="homebtn" onAction="#GoToHomeView" prefHeight="34.0" prefWidth="90.0" text="Home" textFill="#f5cb4d">
                <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../ImageIcos/icons8_left_3_48px.png" />
+                        <Image url="@../ImageIcos/home%20icon.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
+            </JFXButton>
+            <JFXButton fx:id="backBtn" onAction="#GoToBackView" prefHeight="23.0" prefWidth="85.0" text="Back" textFill="#f5cb4e">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ImageIcos/back%20icon_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
       </HBox>
       <VBox alignment="TOP_CENTER" layoutX="12.0" layoutY="98.0" prefHeight="440.0" prefWidth="570.0" spacing="8.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
          <children>
             <Circle fx:id="userIV" fill="WHITE" radius="88.0" stroke="#3d4956" strokeType="INSIDE">
                <cursor>
-                  <Cursor fx:constant="HAND" />
                </cursor>
                <VBox.margin>
                   <Insets bottom="8.0" />
@@ -162,19 +166,18 @@
             </HBox>
             <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="534.0">
                <children>
-                  <JFXButton fx:id="saveBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" prefHeight="42.0" prefWidth="267.0" style="-fx-background-color: #198b98;" text="Enregistrer les Modification" textFill="#3d4956">
+                  <JFXButton fx:id="saveBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" prefHeight="42.0" prefWidth="267.0" style="-fx-background-color: #198b98;" text="Enregistrer les Modification" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="115.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../ImageIcos/icons8_save_close_24px.png" />
+                              <Image url="@../ImageIcos/icons8_save_24px.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
                      </cursor>
                      <VBox.margin>
                         <Insets top="32.0" />

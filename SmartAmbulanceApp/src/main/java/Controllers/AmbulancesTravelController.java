@@ -69,6 +69,8 @@ public class AmbulancesTravelController implements Initializable{
     private JFXButton suivreBtn;
     @FXML
     private JFXButton delete;
+    @FXML
+    private JFXButton homebtn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -94,7 +96,7 @@ public class AmbulancesTravelController implements Initializable{
          Stage stage;
         Parent root;
 stage = (Stage) addbtn.getScene().getWindow();
-     root = FXMLLoader.load(getClass().getResource("/fxml/NewAmbulanceTravelController.fxml"));
+     root = FXMLLoader.load(getClass().getResource("/fxml/NewAmbulanceTravel.fxml"));
 Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -119,4 +121,20 @@ Scene scene = new Scene(root);
 
 }
     
+    
+       // back and home Method
+        @FXML
+    private void GoToHomeView(ActionEvent event) throws IOException {
+   
+         Stage stage;
+        Parent root;
+    stage = (Stage) homebtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
 }

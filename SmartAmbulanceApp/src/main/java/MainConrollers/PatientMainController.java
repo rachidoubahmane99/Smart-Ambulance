@@ -244,4 +244,23 @@ public class PatientMainController {
 
        return patients;
     }
+        
+        
+          //get Count
+      public int CountRows() throws SQLException{
+          int count =0;
+          try {
+           con = DbConnection.getConnection();
+            stmt = con.createStatement();
+
+        resultSet =stmt.executeQuery("SELECT COUNT(*) FROM Patient");
+        while (resultSet.next()) {
+                  count = resultSet.getInt(1);
+                  
+              }
+            } catch (SQLException ex) {
+            System.out.println("Error");
+        }
+      return count;
+      }
 }

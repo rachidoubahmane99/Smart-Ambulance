@@ -21,6 +21,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -45,6 +46,10 @@ public class ChangePasswordController implements Initializable {
     private JFXPasswordField repeat;
     @FXML
     private JFXButton save;
+    @FXML
+    private JFXButton homebtn;
+      @FXML
+    private JFXButton backBtn;
 
     
     Admin d;
@@ -100,4 +105,33 @@ public class ChangePasswordController implements Initializable {
         stage.setScene(scene);
         stage.show();
        }
+       
+       // back and home Method
+        @FXML
+    private void GoToHomeView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) homebtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
+    
+    @FXML
+    private void GoToBackView(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+    stage = (Stage) backBtn.getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/AdminProfile.fxml"));
+      root = loader.load();
+    Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        
+}
 }
