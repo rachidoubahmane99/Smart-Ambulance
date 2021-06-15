@@ -56,6 +56,9 @@ public class Patient {
     public int getIdPatient() {
         return this.idPatient;
     }
+    public void SetIdPatient(int id) {
+        this.idPatient = id;
+    }
 
   
 

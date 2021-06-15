@@ -16,6 +16,7 @@ import com.mycompany.smartambulanceapp.App;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -120,6 +121,22 @@ Scene scene = new Scene(root);
         stage.show();
         
 
+}
+    
+    @FXML
+    private void GoToDeleteView(ActionEvent event) throws IOException{
+      
+        Parent root ;
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/DeleteConfirmation.fxml"));
+     Parent root1;
+        root1 = (Parent)loader.load();
+      DeleteConfirmationController controller = loader.getController();
+      am = tableView.getSelectionModel().getSelectedItem();
+      controller.SetMatricule(am);
+            Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+       
 }
 
    

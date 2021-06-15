@@ -15,6 +15,7 @@ import com.mycompany.smartambulanceapp.App;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -119,6 +120,23 @@ Scene scene = new Scene(root);
         
 
 }
+    
+    @FXML
+    private void GoToDeleteView(ActionEvent event) throws IOException{
+      
+           AmbulanceTravel ambT ;
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/DeleteConfirmation.fxml"));
+     Parent root1;
+        root1 = (Parent)loader.load();
+      DeleteConfirmationController controller = loader.getController();
+      ambT = tableView.getSelectionModel().getSelectedItem();
+      controller.SetIdTravel(ambT);
+            Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+
+}
+    
     
     
        // back and home Method

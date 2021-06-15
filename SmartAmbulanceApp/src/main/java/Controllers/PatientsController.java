@@ -92,7 +92,7 @@ public class PatientsController implements Initializable {
     @FXML
     private JFXButton export;
 
-    
+    Patient pat;
     
     
     /**
@@ -103,7 +103,7 @@ public class PatientsController implements Initializable {
         // TODO
         pa = new PatientMainController();
          tableView.setItems(pa.getAllPatients());
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("idPatient"));
         NomColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenomColumn.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         maladieColumn.setCellValueFactory(new PropertyValueFactory<>("maladie"));
@@ -160,6 +160,23 @@ Scene scene = new Scene(root);
         
 
 }
+    
+    
+        @FXML
+    private void GoToDeleteView(ActionEvent event) throws IOException{
+      Parent root ;
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/DeleteConfirmation.fxml"));
+     Parent root1;
+        root1 = (Parent)loader.load();
+      DeleteConfirmationController controller = loader.getController();
+      pat = tableView.getSelectionModel().getSelectedItem();
+      controller.SetIdPatient(pat);
+            Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+        
+}
+    
     
     
     // back and home Method

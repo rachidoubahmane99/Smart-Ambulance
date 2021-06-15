@@ -46,10 +46,10 @@ public class AmbulanceMainController {
          return nbUpdated!=0;
        
     }
-        public boolean  DeleteAmbulance(Ambulance am) throws SQLException{
+        public boolean  DeleteAmbulance(String matricule) throws SQLException{
          con = DbConnection.getConnection();
                    stmt = con.createStatement();
-         String query="Delete From Ambulance WHERE matricule = '"+am.getMatricule()+"'";
+         String query="Delete From Ambulance WHERE matricule = '"+matricule+"'";
          int nbUpdated = stmt.executeUpdate(query);
          return nbUpdated!=0;
        

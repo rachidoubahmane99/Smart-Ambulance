@@ -61,7 +61,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="delete" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="877.0" layoutY="441.0" prefHeight="39.0" prefWidth="40.0" ripplerFill="TOMATO" style="-fx-background-color: red;" styleClass="circle-primary-btn" text="delete_patient" textFill="#3d4956">
+      <JFXButton fx:id="delete" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="877.0" layoutY="441.0" onAction="#GoToDeleteView" prefHeight="39.0" prefWidth="40.0" ripplerFill="TOMATO" style="-fx-background-color: red;" styleClass="circle-primary-btn" text="delete_patient" textFill="#3d4956">
          <graphic>
             <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                <image>

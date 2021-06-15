@@ -156,7 +156,7 @@ public class NewAmbulanceTravelController implements Initializable  {
          Stage stage;
         Parent root;
     stage = (Stage) backBtn.getScene().getWindow();
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Ambulances.fxml"));
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/AmbulancesTravel.fxml"));
       root = loader.load();
     Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -49,10 +49,10 @@ public class PatientMainController {
          return nbUpdated!=0;
        
     }
-      public boolean  DeletePatient(Patient p) throws SQLException{
+      public boolean  DeletePatient(int idPatient) throws SQLException{
          con = DbConnection.getConnection();
                    stmt = con.createStatement();
-         String query="Delete from Patient WHERE idPatient= "+p.getIdPatient()+"";
+         String query="Delete from Patient WHERE idPatient= "+idPatient+"";
          int nbUpdated = stmt.executeUpdate(query);
          return nbUpdated!=0;
        
@@ -64,7 +64,6 @@ public class PatientMainController {
         try {
            con = DbConnection.getConnection();
             stmt = con.createStatement();
-        //String query="select * from Admin where nom like'"+searchInput+"' ";
         resultSet =stmt.executeQuery("SELECT * FROM Patient where Nom ='"+name+"'");
         
             while (resultSet.next()) {

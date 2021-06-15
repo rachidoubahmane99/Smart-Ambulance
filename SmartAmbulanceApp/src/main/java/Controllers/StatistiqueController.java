@@ -108,7 +108,7 @@ public class StatistiqueController implements Initializable  {
          Stage stage;
         Parent root;
     stage = (Stage) backBtn.getScene().getWindow();
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/AmbulancesTravel.fxml"));
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HomePage.fxml"));
       root = loader.load();
     Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -38,6 +38,14 @@ public class AmbulanceTravelMainController {
        
     }
     
+    public boolean  deleteAmbulanceTravel(int idTravel) throws SQLException{
+            con = DbConnection.getConnection();
+                   stmt = con.createStatement();
+                   String query="Delete from Patient WHERE idTravel= "+idTravel+"";
+         int nbUpdated = stmt.executeUpdate(query);
+         return nbUpdated!=0;
+    }
+    
     
     public ObservableList<AmbulanceTravel> getAllAmbulancesTravel() {
 
