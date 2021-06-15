@@ -6,6 +6,7 @@
 package Controllers;
 
 import BdConnect.DbConnection;
+import Include.FilterTable;
 import Include.Notification;
 import MainConrollers.PatientMainController;
 import Models.Admin;
@@ -111,7 +112,8 @@ public class PatientsController implements Initializable {
         phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
         joinDateColumn.setCellValueFactory(new PropertyValueFactory<>("joinDate"));
 
-        
+        FilterTable filter = new FilterTable();
+        filter.addTextFilter(pa.getAllPatients(), searchTextField, tableView);
         
         export.setOnAction(Action -> {
             
@@ -152,10 +154,8 @@ Scene scene = new Scene(root);
       p = tableView.getSelectionModel().getSelectedItem();
       
       controller.FillInputes(p);
-    // root = FXMLLoader.load(getClass().getResource("/fxml/EditPatient.fxml"));
     Scene scene = new Scene(root);
         stage.setScene(scene);
-      // EditPatientController controller = root.getController();
         stage.show();
         
 

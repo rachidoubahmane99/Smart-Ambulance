@@ -35,7 +35,7 @@
             </TableView>
          </children>
       </VBox>
-      <JFXTextField fx:id="searchTextField" focusColor="#4dadf7" layoutX="89.0" layoutY="58.0" onKeyReleased="#searchAdmins" prefHeight="27.0" prefWidth="175.0" promptText="admin Search" />
+      <JFXTextField fx:id="searchTextField" focusColor="#4dadf7" layoutX="89.0" layoutY="58.0" prefHeight="27.0" prefWidth="175.0" promptText="admin Search" />
       <JFXButton fx:id="homebtn" layoutX="860.0" layoutY="3.0" onAction="#GoToHomeView" prefHeight="39.0" prefWidth="94.0" text="Home" textFill="#f5cb4d">
          <graphic>
             <ImageView fitHeight="24.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">

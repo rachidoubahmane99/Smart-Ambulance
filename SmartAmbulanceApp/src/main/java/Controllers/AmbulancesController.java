@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Include.FilterTable;
 import MainConrollers.AmbulanceMainController;
 import MainConrollers.PatientMainController;
 import Models.Ambulance;
@@ -83,6 +84,8 @@ public class AmbulancesController implements Initializable{
         TemperateurColumn.setCellValueFactory(new PropertyValueFactory<>("Temperateur"));
         HearBeatColumn.setCellValueFactory(new PropertyValueFactory<>("HearBeat"));
         etatColumn.setCellValueFactory(new PropertyValueFactory<>("etat"));
+         FilterTable filter = new FilterTable();
+        filter.addTextFilter(amc.getAllAmbulances(), searchTextField, tableView);
         
         
        

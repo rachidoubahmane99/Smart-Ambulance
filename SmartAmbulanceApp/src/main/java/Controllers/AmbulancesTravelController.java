@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Include.FilterTable;
 import MainConrollers.AmbulanceTravelMainController;
 import Models.Ambulance;
 import Models.AmbulanceTravel;
@@ -77,10 +78,6 @@ public class AmbulancesTravelController implements Initializable{
         
         
         amtc = new AmbulanceTravelMainController();   
-        //ObservableList<AmbulanceTravel> ambulancesTravel = FXCollections.observableArrayList();
-        //ambulancesTravel =amtc.getAllAmbulancesTravel();
-       
-        //System.out.println(ambulancesTravel.toArray());
         tableView.setItems(amtc.getAllAmbulancesTravel());
         IdColumn.setCellValueFactory(new PropertyValueFactory<>("idTravel"));
         matriculeColumn.setCellValueFactory(new PropertyValueFactory<>("AmbulanceMatricule"));
@@ -88,6 +85,8 @@ public class AmbulancesTravelController implements Initializable{
         AdressColumn.setCellValueFactory(new PropertyValueFactory<>("AdressPatient"));
         DateColumn.setCellValueFactory(new PropertyValueFactory<>("TravelDate"));
         etatColumn.setCellValueFactory(new PropertyValueFactory<>("IsDone"));
+         FilterTable filter = new FilterTable();
+        filter.addTextFilter(amtc.getAllAmbulancesTravel(), searchTextField, tableView);
     }
 
     @FXML

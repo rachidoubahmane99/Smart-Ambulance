@@ -8,6 +8,7 @@ package MainConrollers;
 import BdConnect.DbConnection;
 import Controllers.LoginController;
 import Models.Admin;
+import Models.Ambulance;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,6 +17,8 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.prefs.Preferences;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import static javax.management.Query.value;
 
 /**
@@ -28,6 +31,38 @@ public class AdminMainController {
     public Statement stmt;
      PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
+    
+    
+    
+    public ObservableList<Admin> getAllAdmins() {
+
+        ObservableList<Admin> admins = FXCollections.observableArrayList();
+        //String searchInput = searchTextField.getText();
+        
+        try {
+           con = DbConnection.getConnection();
+            stmt = con.createStatement();
+        resultSet =stmt.executeQuery("SELECT * FROM Admin ");
+            while (resultSet.next()) {
+                int id = resultSet.getInt("IdAdmin");
+                String prenom = resultSet.getString("prenom");
+                String nom = resultSet.getString("nom");
+                String email = resultSet.getString("email");
+                String phone = resultSet.getString("phone");
+                int active = resultSet.getInt("active");
+                
+
+                
+                admins.add(new Admin(id,nom,prenom,email,phone,active));
+
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error");
+        }
+        return admins;
+    }
+    
     
     public boolean  addAdmin(Admin d) throws SQLException{
          con = DbConnection.getConnection();
@@ -100,28 +135,7 @@ public class AdminMainController {
          }
          return adminId;
     }
-    /*
-      public Admin  showAdmin(Admin d) throws SQLException{
-         con = DbConnection.getConnection();
-                   stmt = con.createStatement();
-        Preferences userPreferences = Preferences.userRoot();
-        String info = userPreferences.get("adminEmail","No Email");
-         String query="select * from Admin where  cne='"+cne+"' ";
-        ResultSet rs=stmt.executeQuery(query);
-        Etudiant e =null;
-          if (rs.next()) {
-              String login = rs.getString("login");
-            String mdp = rs.getString("password");
-            String cin = rs.getString("cin");
-           String nom=rs.getString("nom");
-           String prenom=rs.getString("prenom");
-           String Cne=rs.getString("cne");
-  
-            e = new Etudiant(login, mdp, cin, nom, prenom,Cne);
-          }
-          return e;
-    }
-      */
+    
       public Admin  showAdminByEmail() throws SQLException{
          con = DbConnection.getConnection();
                    stmt = con.createStatement();

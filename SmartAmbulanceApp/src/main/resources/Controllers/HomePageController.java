@@ -48,6 +48,19 @@ public class HomePageController implements Initializable {
     }    
 
     @FXML
+    private void LogOut(ActionEvent event) throws IOException {
+         Stage stage;
+        Parent root;
+        stage = (Stage) profileBtn.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    
+    
+    @FXML
     private void goToProfileView(ActionEvent event) throws IOException {
          Stage stage;
         Parent root;
