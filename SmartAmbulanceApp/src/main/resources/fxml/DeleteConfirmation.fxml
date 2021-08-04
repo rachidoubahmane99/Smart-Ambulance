@@ -9,16 +9,16 @@
 
 <AnchorPane id="AnchorPane" prefHeight="213.0" prefWidth="599.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DeleteConfirmationController">
    <children>
-      <Label layoutX="44.0" layoutY="52.0" prefHeight="46.0" prefWidth="528.0" text="Vous Voulez Vraiment desactiver Votre Compte ?" textFill="#2e5742">
+      <Label layoutX="44.0" layoutY="52.0" prefHeight="46.0" prefWidth="528.0" text="Vous Voulez Vraiment Supprimer ?" textFill="#2e5742">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
       </Label>
       <JFXButton fx:id="yesDeleteBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" layoutX="119.0" layoutY="127.0" prefHeight="46.0" prefWidth="171.0" style="-fx-background-color: #198b98;" text="OUI" textFill="WHITE" />
       <JFXButton fx:id="cancelBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" layoutX="319.0" layoutY="127.0" onAction="#leaveView" prefHeight="46.0" prefWidth="171.0" style="-fx-background-color: red;" text="NON" textFill="WHITE" />
-      <JFXTextField fx:id="matriculetxt" layoutX="37.0" layoutY="14.0" />
-      <JFXTextField fx:id="idPatienttxt" layoutX="399.0" layoutY="27.0" />
-      <JFXTextField fx:id="ambulanceTravelTxt" layoutX="213.0" layoutY="15.0" />
+      <JFXTextField fx:id="matriculetxt" layoutX="37.0" layoutY="14.0" visible="false" />
+      <JFXTextField fx:id="idPatienttxt" layoutX="399.0" layoutY="27.0" visible="false" />
+      <JFXTextField fx:id="ambulanceTravelTxt" layoutX="213.0" layoutY="15.0" visible="false" />
    </children>
    <stylesheets>
       <URL value="@../Styles/buttons.css" />

@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import static javax.management.Query.value;
+import static jakarta.management.Query.value;
 
 /**
  *
@@ -143,6 +143,7 @@ public class AdminMainController {
         String info = userPreferences.get("adminEmail","No Email");
         //String info ="miola@gmail.com";
          String query="select * from Admin where  email='"+info+"' ";
+          System.out.println(info);
         ResultSet rs=stmt.executeQuery(query);
         Admin e =null;
           if (rs.next()) {

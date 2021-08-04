@@ -9,7 +9,7 @@ package Include;
  *
  * @author rachid dev
  */
-import javax.sound.sampled.*;
+import jakarta.sound.sampled.*;
 
 public class SoundAlert {
 

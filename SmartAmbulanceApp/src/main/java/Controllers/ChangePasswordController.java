@@ -41,8 +41,11 @@ public class ChangePasswordController implements Initializable {
 
     @FXML
     private AnchorPane anchorPane;
+    @FXML
     private JFXPasswordField current;
+    @FXML
     private JFXPasswordField newPass;
+    @FXML
     private JFXPasswordField repeat;
     @FXML
     private JFXButton save;
@@ -64,11 +67,12 @@ public class ChangePasswordController implements Initializable {
        save.setOnAction(Action -> {
             
         try {
+            System.out.println("Controllers.ChangePasswordController.initialize()");
             ChangePass();
         }  catch (SQLException ex) {
                Logger.getLogger(ChangePasswordController.class.getName()).log(Level.SEVERE, null, ex);
            } catch (IOException ex) {
-               Logger.getLogger(ChangePasswordController.class.getName()).log(Level.SEVERE, null, ex);
+               System.out.println("Controllers.ChangePasswordController.initialize()");
            }
          });
     }    
@@ -78,7 +82,13 @@ public class ChangePasswordController implements Initializable {
           
            d = new Admin();
        adm= new AdminMainController();
-           if (newPass.getText().equals(repeat.getText())) {
+       String npass = newPass.getText();
+       String rpass = repeat.getText();
+           System.out.println("Controllers.ChangePasswordController.ChangePass()");
+       
+           System.out.println("rpass :"+rpass+" and npass: "+npass);
+       
+           if (npass.equals(rpass)) {
                  boolean result = adm.ChangePass(current.getText(), newPass.getText());
               if (result) {
                   nt.SuccessNotification("Mot de pass changé avec succes", "Mercii");
