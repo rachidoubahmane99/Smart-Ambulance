@@ -13,33 +13,34 @@ This application aims to  analysise a patient state during his  ambulance transp
 
 
   
+#### Logo
 ![Logo](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/smart%20ambulance%20logo.png)
 
     
 ## Screenshots
-Login
+#### Login
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/login.png)
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/login%20Notification.png)
-Ambulances Managment
+#### Ambulances Managment
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/Home%20page%20new%20one.png)
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/Liste%20Ambulances.png)
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/new%20ambulance.png)
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/Edit%20Ambulance%20new.png)
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/delete%20Confirmation.png)
-Patients Managment
+#### Patients Managment
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/patients%20List.png)
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/Edit%20patient.png)
-Admin Profile
+#### Admin Profile
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/profile%20Admin.png)
-Admins Managment
+#### Admins Managment
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/ADMINS%20List.png)
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/New%20admin.png)
-Track Ambulances :
+#### Track Ambulances :
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/TRACK%20home.png)
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/TRACK%20One.png)
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/track%202.png)
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/track%20with%20Alret.png)
-Stats :
+#### Stats :
 ![App Screenshot](https://github.com/rachidoubahmane99/Smart-Ambulance/blob/main/SmartAmbulanceApp/screenshots/STATS.png)
 
 
